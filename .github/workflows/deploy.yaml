@@ -55,7 +55,7 @@ jobs:
           -i ~/.ssh/id_rsa \
           ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << EOF
           echo "${{ secrets.GHCR_PAT }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-          cd applications/next-js-app
+          cd applications/nextjs-app
           docker pull ghcr.io/${{ github.repository }}:latest
           sh deploy.sh
           EOF
